@@ -5,7 +5,4 @@ This is a collection of audit checklists that were designed to cover security as
 ## Table of Contents
 
 - [x] [Collaterized Debt Positions (CDP)](https://github.com/Decurity/audit-checklists/blob/master/cdp.md)
-
-up next:
-
-- [ ] Liquid Staking Derivatives (LSD)
+- [x] [Liquid Staking Derivatives (LSD)](https://github.com/Decurity/audit-checklists/blob/master/lsd.md)
