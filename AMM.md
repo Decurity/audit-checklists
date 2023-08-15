@@ -1,0 +1,10 @@
+1. How does the TWAMM algorithm calculate the time intervals between the execution of virtual orders - using `block.timestamp` or `block.number`? Each option has its advantages and disadvantages, the auditor should remember this.
+2. When forking popular protocols like Uniswap auditor need to closely monitor the diffs. A change in one section of the code must be accompanied by a change in another section of the code that depends on the first.
+3. Various formulas of product constants must pass all mathematical checks. Especially carefully you need to analyze potential problems with rounding.
+4. Callback functions that are called by the `swap()` function are required to check the address of the calling contract. Auditor also need to analyze possible ways to bypass the check.
+5. Auditor should remember that the `transfer()`, `transferFrom()` and even `safeTransfer()` functions can almost always lead to re-entrancy. And even if the nonReentrant modifier is used, a cross-contract view re-entrancy attack is possible. The CEI pattern should be applied everywhere. Special attention should be paid to updating `reserves[]`.
+6. When implementing FlashSwap (like flashloan), the order of the call should be as follows: `transferToken(toUserContract)` → `Callback function`.
+7. Protocols that use DEX AMM for token exchange should calculate the slippage and verify it. Otherwise, attackers can make a sandwich attack.
+8. The results of the `transfer()` and `transferFrom()` functions should be checked. In case of failure this functions return false. `revert()` does not occur.
+9. The auditor should carefully consider the operation of updating `reserves[]`. The developers could have made a mistake and made the calculation wrong.
+10. If the contract updates the user's token balances using signed int then the implementation of `-int(amount)` may lead to an error due to int overflow.
