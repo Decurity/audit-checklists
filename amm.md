@@ -8,9 +8,11 @@
 - [ ] In some tokens `transfer()` and `transferFrom()` may return `false` instead of `revert()`. Is the return value of these functions checked?
 - [ ] The auditor should carefully consider the operation of updating `reserves[]`. The developers could have made a mistake and made the calculation wrong.
 - [ ] Does the AMM update the user's token balances using signed integer? Can `-int(amount)` lead to an integer overflow?
+- [ ] Can a user execute arbitrary code on behalf of a contract for which users approve their tokens?
+- [ ] Does the contract support a pair of tokens with a transfer fee? Is this fee taken into account in swap?
 
 ## TWAMM
-- [ ] 
+- [ ] Does TWAMM use rebase tokens? What happens if during a long-term swap there is a change in the balance of tokens on the pair's contract?
 
 ## Integration
 
