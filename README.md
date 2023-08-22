@@ -6,3 +6,4 @@ This is a collection of audit checklists that were designed to cover security as
 
 - [x] [Collaterized Debt Positions (CDP)](https://github.com/Decurity/audit-checklists/blob/master/cdp.md)
 - [x] [Liquid Staking Derivatives (LSD)](https://github.com/Decurity/audit-checklists/blob/master/lsd.md)
+- [x] [Automated Market Makers (AMM)](https://github.com/Decurity/audit-checklists/blob/master/amm.md)
